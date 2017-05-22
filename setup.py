@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name='DjangoNosePlugin',
-    version='0.1',
+    version='0.2',
     author='Jennifer Bell',
     author_email='jenniferlianne@yahoo.ca',
     description='Use plugin defined in django_nose to run tests via nose \

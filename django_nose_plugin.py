@@ -21,7 +21,8 @@ class DjangoNosePlugin(Plugin):
         if self._plugin == None:
             from django_nose.runner import NoseTestSuiteRunner
             from django_nose.plugin import DjangoSetUpPlugin
-            runner = NoseTestSuiteRunner()
+            runner = NoseTestSuiteRunner(verbosity=self.conf.verbosity,
+                                         interactive=False)
             self._plugin = DjangoSetUpPlugin(runner)
         return self._plugin
 

@@ -33,10 +33,10 @@ class DjangoNosePlugin(Plugin):
     def configure(self, *args, **kw_args):
         super(DjangoNosePlugin, self).configure(*args, **kw_args)
         if self.enabled:
+            setup_django()  # no-op for Django < 1.7
             self.plugin.configure(*args, **kw_args)
 
     def prepareTest(self, test):
-        setup_django()  # no-op for Django < 1.7
         self.plugin.prepareTest(test)
 
     def finalize(self, result):
